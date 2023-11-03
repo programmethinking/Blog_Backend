@@ -26,7 +26,7 @@ import java.util.List;
 
 @Tag(name = "REST APIs for Post Resource")
 @RestController
-@RequestMapping("/api/posts")
+@RequestMapping("/api/v1/blog")
 public class BlogController {
 
     private final PostService postService;
@@ -46,6 +46,12 @@ public class BlogController {
     public ResponseEntity<PostDto> createPost(@Valid @RequestBody PostDto postDto) {
         return new ResponseEntity<>(postService.createPost(postDto), HttpStatus.CREATED);
     }
+    /*
+    TODO: This function should be written like
+    public BlogResponse create(@Valid @RequestBody BlogCreationRequest request) {
+        return service.create(request)
+    }
+     */
 
     @Operation(
             summary = "Get All Posts REST API",
