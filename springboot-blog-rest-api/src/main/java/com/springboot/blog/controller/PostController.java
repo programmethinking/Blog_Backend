@@ -27,11 +27,11 @@ import java.util.List;
 @Tag(name = "REST APIs for Post Resource")
 @RestController
 @RequestMapping("/api/posts")
-public class BlogController {
+public class PostController {
 
     private final PostService postService;
 
-    public BlogController(PostService postService) {
+    public PostController(PostService postService) {
         this.postService = postService;
     }
 
